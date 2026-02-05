@@ -1,0 +1,1621 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== LANDING PAGE ===== */
+.landing {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Landing page title */
+.landing-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;           /* adjust to match Canva */
+  font-weight: 600;
+  color: #fafafa;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+  text-align: center;
+
+  /* Subtle depth / border */
+  text-shadow:
+    0 1px 0 #2b2b2b,
+    0 2px 4px rgba(0,0,0,0.4);
+}
+
+.landing video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark overlay (optional but recommended) */
+.landing::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+/* Center content */
+.landing-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo */
+.landing-logo {
+  width: 220px; /* adjust to match Canva */
+  margin-bottom: 0.5%;
+}
+
+.landing-logo {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+
+/* Button image */
+.landing-btn {
+  width: 110px; /* adjust to match Canva */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.landing-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ================================
+   HOME PAGE
+================================ */
+/* Header for inner pages */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;                 /* 🔑 prevents overflow bugs */
+  box-sizing: border-box;       /* padding included in width */
+  z-index: 1000;
+
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;              /* keep your original ratio */
+
+  /* Glassmorphism */
+  background: rgba(43, 43, 43, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.logo-small {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+  transform: translateY(15px); /* slight optical centering */
+}
+
+.home {
+  min-height: 100vh;
+
+  background-image: url('../assets/images/home-page-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Main content layout */
+.home-content {
+  height: calc(100vh - 70px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20%;
+}
+
+.home-text h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #fafafa;
+  line-height: 1.3;
+  text-align: left;
+  max-width: 420px;
+}
+
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.home-btn {
+  width: 220px;
+  padding: 16px 0;
+  text-align: center;
+
+  background: #a01524;
+  border-radius: 50px;
+
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fafafa;
+  text-decoration: none;
+
+  box-shadow: 0 6px 12px rgba(160, 21, 84, 0.25);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect (subtle, professional) */
+.home-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px rgba(160, 21, 84, 0.35);
+}
+
+/* ================================
+   HEADER BUTTON GLASS STYLES
+================================ */
+
+/* Home button */
+.header-btn[href="home.html"] {
+  background-image: url('../assets/images/home-page-bg.png');
+  background-size: cover;
+  background-position: center;
+  color: #fafafa;
+
+  /* Glass effect */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(250, 250, 250, 0.1); /* subtle tint over bg */
+
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+/* Pengenalan button */
+.header-btn[href="pengenalan.html"] {
+  background-image: url('../assets/images/pengenalan-bg-page.png');
+  background-size: cover;
+  background-position: center;
+  color: #fafafa;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(250, 250, 250, 0.1);
+
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+/* Kandungan button */
+.header-btn[href="kandungan.html"] {
+  background-image: url('../assets/images/kandungan-bg-page.png');
+  background-size: cover;
+  background-position: center;
+  color: #fafafa;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(250, 250, 250, 0.1);
+
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+/* Optional hover effect for all buttons */
+.header-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.35);
+}
+
+
+/* ================================
+   GLOBAL RESET
+================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body.pengenalan {
+  background-color: #2b2b2b; /* the overall dark page background */
+  position: relative;        /* for pseudo-element stacking if needed */
+}
+
+body.pengenalan::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('../assets/images/paper-texture.png') repeat;
+  opacity: 0.05;  /* subtle paper effect */
+  z-index: 0;    /* behind all content */
+  pointer-events: none;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 4; /* below hero title & overlay */
+  background-color: #fafafa;
+
+  max-width: 1200px;        /* much wider */
+  margin: 140px auto 40px;  /* less top/bottom margin to expand vertically */
+  padding: 60px 50px;       /* bigger padding for more internal space */
+
+  border-radius: 18px;
+  box-shadow: 
+    0 15px 45px rgba(0,0,0,0.18),
+    0 8px 24px rgba(0,0,0,0.10); /* stronger shadow for depth */
+}
+
+/* ================================
+   STICKY MAIN HEADER
+================================ */
+.pengenalan .main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  box-sizing: border-box;
+  z-index: 1000;
+
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+
+  background: rgba(43, 43, 43, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.pengenalan .logo-small {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+  transform: translateY(15px);
+}
+
+/* ================================
+   HERO OVERLAY – FIXED & ALIGNED
+================================ */
+.pengenalan .header-overlay {
+  position: fixed;          /* 🔥 attach to viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+
+  z-index: 900;             /* consistent with kandungan */
+
+  background-image: 
+    linear-gradient(
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.35)
+    ),
+    url('../assets/images/pengenalan-bg-page.png');
+
+  background-size: cover;
+  background-position: center; /* match kandungan */
+  background-repeat: no-repeat;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+}
+
+/* ================================
+   HERO TITLE – FIXED & ANCHORED
+================================ */
+.pengenalan .hero-title{
+  position: fixed;              /* 🔥 attach to viewport */
+  top: 60px;                   /* bottom of 150px overlay minus offset */
+  left: 50%;
+  transform: translateX(-50%);
+  
+  z-index: 950;                 /* above overlay, below header */
+
+  font-size: 36px;
+  font-weight: 700;
+  color: #fafafa;
+  text-align: center;
+
+  text-shadow:
+    0 1px 0 #2b2b2b,
+    0 2px 4px rgba(160,21,36,0.25);
+
+  pointer-events: none;         /* prevents blocking header buttons */
+}
+
+
+/* ================================
+   WHITE READABLE CONTENT AREA
+================================ */
+.pengenalan-content {
+  position: relative;
+  z-index: 4;
+  background-color: #fafafa;
+  max-width: 1200px;           /* bigger than pengenalan */
+  margin: 180px auto 80px;
+  padding: 60px 50px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12),
+              0 4px 12px rgba(0,0,0,0.08);
+  font-size: 16px;
+  color: #2b2b2b;
+}
+
+/* ================================
+   OPTIONS MENU (RIGHT SIDE)
+================================ */
+.pengenalan .header-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 8px;
+}
+
+.pengenalan .options-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(250,250,250,0.2);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.pengenalan .options-btn:hover {
+  background: rgba(250,250,250,0.35);
+  transform: scale(1.08);
+}
+
+/* ================================
+   SLIDE-IN HEADER BUTTONS
+================================ */
+.header-actions {
+  position: absolute;
+  top: 50%;
+  right: 0;
+
+  transform: translateY(-50%) translateX(120%);
+  display: flex;
+  gap: 12px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.35s ease;
+}
+
+.header-menu.active .header-actions {
+  transform: translateY(-50%) translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.header-btn {
+  width: 200px;
+  padding: 16px 0;
+  text-align: center;
+
+  background: #fafafa;
+  border-radius: 50px;
+
+  font-size: 18px;
+  font-weight: 400;
+  color: #2b2b2b;
+  text-decoration: none;
+
+  box-shadow: 0 6px 12px rgba(160, 21, 36, 0.25);
+  transition: all 0.3s ease;
+}
+
+.header-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(160, 21, 36, 0.35);
+}
+
+/* ================================
+   PENGENALAN CONTENT TYPOGRAPHY
+================================ */
+.kata-aluan {
+  text-align: left;
+}
+
+.kata-aluan h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.kata-aluan p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.kata-aluan ol {
+  padding-left: 22px;
+  margin-bottom: 20px;
+}
+
+.kata-aluan li {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+/* ================================
+   QR PAYMENT SECTION
+================================ */
+.qr-section {
+  margin-top: 70px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.qr-image {
+  width: 220px;
+  max-width: 80vw;
+  height: auto;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .qr-image:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+  }
+}
+
+.qr-label {
+  margin-top: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  color: #2b2b2b;
+}
+
+/* ================================
+   STRUKTUR PENGURUSAN JURNAL
+================================ */
+.struktur-jurnal {
+  margin-top: 70px;
+  color: #2b2b2b;
+}
+
+.struktur-jurnal h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #2b2b2b;
+}
+
+/* ================================
+   Card container
+================================ */
+.struktur-card {
+  position: relative;
+  background: #2b2b2b;
+  border-radius: 18px;
+  padding: 48px 30px 36px; /* extra top space for role label */
+  margin-bottom: 36px;
+  text-align: center;
+
+  /* Depth */
+  box-shadow: 
+    0 12px 30px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* ================================
+   Floating role label – glass + image masked
+================================ */
+.struktur-card h3 {
+  position: absolute;
+  top: -48px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  padding: 8px 22px;
+  border-radius: 20px;
+
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #fafafa;
+  text-align: center;
+
+  /* Glass base */
+  background: rgba(43, 43, 43, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 10px 26px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  overflow: hidden;
+}
+
+/* ================================
+   Role label background image & overlay
+================================ */
+.struktur-card h3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("../assets/images/pengenalan-bg-page.png");
+  background-size: cover;
+  background-position: bottom center; /* bottom crop */
+  background-repeat: no-repeat;
+
+  opacity: 1;
+  z-index: -2;
+}
+
+.struktur-card h3::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(43, 43, 43, 0.35),
+    rgba(43, 43, 43, 0.65)
+  );
+
+  z-index: -1;
+}
+
+/* ================================
+   Centered names
+================================ */
+.struktur-card p {
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 0;
+  color: #fafafa;
+}
+
+/* ================================
+   List styling
+================================ */
+.struktur-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.struktur-card li {
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 8px;
+  color: #fafafa;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .struktur-card {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .struktur-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.45),
+                inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+}
+
+/* ================================
+   BOTTOM BAR
+================================ */
+.pengenalan .bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.pengenalan .bottom-bg {
+  position: absolute;
+  inset: 0;
+
+  background-image: url('../assets/images/pengenalan-bg-page.png');
+  background-size: cover;
+  background-position: bottom center;
+  filter: blur(4px) scale(1.1);
+  z-index: 0;
+}
+
+.pengenalan .bottom-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(43, 43, 43, 0.45);
+  z-index: 1;
+}
+
+.pengenalan .bottom-bar p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+
+  font-size: 14px;
+  color: #fafafa;
+  opacity: 0.9;
+
+  text-shadow: 0 1px 0 #2b2b2b, 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* ================================
+   KANDUNGAN PAGE BASE
+================================ */
+.kandungan {
+  background-color: #fafafa;
+  min-height: 100vh;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ================================
+   STICKY MAIN HEADER (Glass + Shadow)
+================================ */
+.kandungan .main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  box-sizing: border-box;
+  z-index: 1000;
+
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+
+  background: rgba(43, 43, 43, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.kandungan .logo-small {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+  transform: translateY(15px);
+}
+
+/* ================================
+   HERO / OVERLAY BEHIND HEADER
+================================ */
+
+/* Hero / overlay behind header with background image */
+.kandungan .header-overlay {
+  position: fixed;          /* 🔥 attach to viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+
+  z-index: 2;             /* below header, above content */
+
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url('../assets/images/kandungan-bg-page.png');
+
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* ================================
+   HERO TITLE – FIXED & ANCHORED
+================================ */
+.kandungan .hero-title{
+  position: fixed;              /* 🔥 attach to viewport */
+  top: 60px;                   /* bottom of 150px overlay minus offset */
+  left: 50%;
+  transform: translateX(-50%);
+  
+  z-index: 3;                 /* above overlay, below header */
+
+  font-size: 36px;
+  font-weight: 700;
+  color: #fafafa;
+  text-align: center;
+
+  text-shadow:
+    0 1px 0 #2b2b2b,
+    0 2px 4px rgba(160,21,36,0.25);
+
+  pointer-events: none;         /* prevents blocking header buttons */
+}
+
+/* ================================
+   KANDUNGAN SEARCH BAR
+================================ */
+
+.kandungan-search {
+  position: fixed;
+  top: 130px; /* below hero title */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  width: 420px;
+}
+
+.search-glass {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 14px 18px;
+
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-radius: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.25),
+    inset 0 0 0 rgba(255,255,255,0.2);
+}
+
+.search-glass input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  font-size: 15px;
+  color: #fff;
+}
+
+.search-glass input::placeholder {
+  color: rgba(255,255,255,0.75);
+}
+
+/* ================================
+   SEARCH DROPDOWN RESULTS
+================================ */
+
+.search-results {
+  margin-top: 10px;
+
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 14px;
+
+  overflow: hidden;
+  display: none;
+
+  box-shadow: 0 12px 28px rgba(0,0,0,0.35);
+}
+
+.search-results.active {
+  display: block;
+}
+
+.search-item {
+  padding: 14px 18px;
+  cursor: pointer;
+
+  font-size: 14px;
+  color: #2b2b2b;
+
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  transition: background 0.25s ease;
+}
+
+.search-item:last-child {
+  border-bottom: none;
+}
+
+.search-item:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+/* ================================
+   OPTIONS MENU
+================================ */
+.kandungan .header-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 8px;
+}
+
+.kandungan .options-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background: rgba(250,250,250,0.2);
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition: all 0.3s ease;
+}
+
+.kandungan .options-btn:hover {
+  background: rgba(250,250,250,0.35);
+  transform: scale(1.08);
+}
+
+/* ================================
+   SLIDE-IN ACTIONS
+================================ */
+.kandungan .header-actions {
+  position: absolute;
+  top: 50%;
+  right: 0;
+
+  transform: translateY(-50%) translateX(120%);
+  display: flex;
+  gap: 12px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.35s ease;
+}
+
+.kandungan .header-menu.active .header-actions {
+  transform: translateY(-50%) translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.header-btn {
+  width: 200px;
+  padding: 16px 0;
+  text-align: center;
+
+  background: #fafafa;
+  border-radius: 50px;
+
+  font-size: 18px;
+  font-weight: 400;
+  color: #2b2b2b;
+  text-decoration: none;
+
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.kandungan .header-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.35);
+}
+
+/* ================================
+   BODY KANDUNGAN PAGE
+================================ */
+body.kandungan {
+  background-color: #2b2b2b; /* the overall dark page background */
+  position: relative;        /* for pseudo-element stacking if needed */
+}
+
+body.kandungan::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('../assets/images/paper-texture.png') repeat;
+  opacity: 0.05;  /* subtle paper effect */
+  z-index: 0;    /* behind all content */
+  pointer-events: none;
+}
+
+/* ================================
+   CONTENT AREA (same as pengenalan)
+================================ */
+.kandungan-content {
+  position: relative;
+  z-index: 1;
+  background-color: #fafafa;
+  max-width: 1200px;           /* bigger than pengenalan */
+  margin: 180px auto 80px;
+  padding: 60px 50px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12),
+              0 4px 12px rgba(0,0,0,0.08);
+  font-size: 16px;
+  color: #fafafa;
+}
+
+/* Intro text */
+.intro-text {
+  font-size: 18px;
+  color: #2b2b2b;
+  font-weight: 500;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+/* ================================
+   AUTHOR CARDS
+================================ */
+.author-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Single author card */
+.author-card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  background: #2b2b2b;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Author picture */
+.author-pic img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* Author biodata */
+.author-bio {
+  flex: 1;
+}
+
+/* Author name */
+.author-bio h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+}
+
+/* Author paragraph */
+.author-bio p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* ================================
+   THESIS DROPDOWN — GLASS (SAFE)
+================================ */
+
+.kandungan .thesis-dropdown {
+  padding: 10px 14px;          /* SAME as before */
+  border-radius: 12px;         /* SAME radius */
+  border: 1px solid rgba(255,255,255,0.35);
+
+  font-size: 16px;             /* SAME font size */
+  cursor: pointer;
+
+  color: #fafafa;              /* ✅ white text */
+
+  /* 🔥 Kandungan background + subtle glass */
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.25),
+      rgba(0,0,0,0.25)
+    ),
+    url('../assets/images/kandungan-bg-page.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  backdrop-filter: blur(6px);  /* ✅ glass only affects bg */
+  -webkit-backdrop-filter: blur(6px);
+
+  box-shadow: 0 3px 8px rgba(0,0,0,0.18);
+
+  transition: all 0.3s ease;
+}
+
+/* Hover stays subtle */
+.kandungan .thesis-dropdown:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.28);
+}
+
+/* Focus (keyboard + click) */
+.kandungan .thesis-dropdown:focus {
+  outline: none;
+  border-color: rgba(255,255,255,0.6);
+}
+
+/* Dropdown list items (browser-limited) */
+.kandungan .thesis-dropdown option {
+  background-color: #2b2b2b;
+  color: #fafafa;
+  padding: 10px;
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .author-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .author-bio h3, .author-bio p {
+    text-align: center;
+  }
+
+  .author-bio select {
+    width: 100%;
+  }
+}
+
+/* ================================
+   BOTTOM BAR KANDUNGAN
+================================ */
+.kandungan .bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.kandungan .bottom-bg {
+  position: absolute;
+  inset: 0;
+
+  background-image: url('../assets/images/kandungan-bg-page.png');
+  background-size: cover;
+  background-position: bottom center;
+  filter: blur(4px) scale(1.1);
+  z-index: 0;
+}
+
+.kandungan .bottom-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(43, 43, 43, 0.45);
+  z-index: 1;
+}
+
+.kandungan .bottom-bar p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+
+  font-size: 14px;
+  color: #fafafa;
+  opacity: 0.9;
+
+  text-shadow: 0 1px 0 #2b2b2b, 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* ================================
+   THESIS PAGE BASE
+================================ */
+.thesis {
+  background-color: #2b2b2b;
+  min-height: 100vh;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ================================
+   BODY KANDUNGAN PAGE
+================================ */
+body.thesis {
+  background-color: #2b2b2b; /* the overall dark page background */
+  position: relative;        /* for pseudo-element stacking if needed */
+}
+
+body.thesis::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('../assets/images/paper-texture.png') repeat;
+  opacity: 0.05;  /* subtle paper effect */
+  z-index: 0;    /* behind all content */
+  pointer-events: none;
+}
+
+
+/* ================================
+   STICKY MAIN HEADER (Glass + Shadow)
+================================ */
+.thesis .main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  box-sizing: border-box;
+  z-index: 1000;
+
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+
+  background: rgba(43, 43, 43, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.thesis .logo-small {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+  transform: translateY(15px);
+}
+
+/* ================================
+   OVERLAY HEADER
+================================ */
+
+.thesis .header-overlay {
+  position: fixed;          /* 🔥 attach to viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+
+  z-index: 900;             /* below header, above content */
+
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.35),
+      rgba(0, 0, 0, 0.35)
+    ),
+    url('../assets/images/thesis-bg-page.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* ================================
+   OPTIONS MENU
+================================ */
+.thesis .header-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 8px;
+}
+
+.thesis .options-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+
+  background: rgba(250,250,250,0.2);
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  transition: all 0.3s ease;
+}
+
+.thesis .options-btn:hover {
+  background: rgba(250,250,250,0.35);
+  transform: scale(1.08);
+}
+
+/* ================================
+   SLIDE-IN ACTIONS
+================================ */
+.thesis .header-actions {
+  position: absolute;
+  top: 50%;
+  right: 0;
+
+  transform: translateY(-50%) translateX(120%);
+  display: flex;
+  gap: 12px;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.35s ease;
+}
+
+.thesis .header-menu.active .header-actions {
+  transform: translateY(-50%) translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.header-btn {
+  width: 200px;
+  padding: 16px 0;
+  text-align: center;
+
+  background: #fafafa;
+  border-radius: 50px;
+
+  font-size: 18px;
+  font-weight: 400;
+  color: #2b2b2b;
+  text-decoration: none;
+
+  box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.thesis .header-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.35);
+}
+
+.thesis-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1200px;
+  margin: 180px auto 80px; /* clears header + overlay */
+  padding: 60px 50px;
+
+  background: #fafafa;
+  border-radius: 16px;
+
+  color: #2b2b2b;
+  line-height: 1.8;
+
+  box-shadow:
+    0 15px 45px rgba(0,0,0,0.18),
+    0 8px 24px rgba(0,0,0,0.10);
+}
+
+/* ================================
+   BOTTOM BAR KANDUNGAN
+================================ */
+.thesis .bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  overflow: hidden;
+  z-index: 1000;
+}
+
+.thesis .bottom-bg {
+  position: absolute;
+  inset: 0;
+
+  background-image: url('../assets/images/thesis-bg-page.png');
+  background-size: cover;
+  background-position: bottom center;
+  filter: blur(4px) scale(1.1);
+  z-index: 0;
+}
+
+.thesis .bottom-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: rgba(43, 43, 43, 0.45);
+  z-index: 1;
+}
+
+.thesis .bottom-bar p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+
+  font-size: 14px;
+  color: #fafafa;
+  opacity: 0.9;
+
+  text-shadow: 0 1px 0 #2b2b2b, 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* ======================================
+   ABSOLUTE MOBILE MENU LOCK (ALL PAGES)
+   Prevent floating / center-left issue
+====================================== */
+@media (max-width: 768px) {
+
+  /* 1. Completely detach menu system from page layout */
+  body.kandungan .header-menu,
+  body.thesis .header-menu,
+  body.pengenalan .header-menu {
+    position: static !important;
+  }
+
+  /* 2. Force hamburger button to viewport top-right */
+  body.kandungan .options-btn,
+  body.thesis .options-btn,
+  body.pengenalan .options-btn {
+    position: fixed !important;
+    top: 8px !important;
+    right: 25px !important;
+
+    width: 56px;
+    height: 56px;
+
+    z-index: 1400 !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+
+  /* 3. Slide-in menu ALWAYS from right */
+  body.kandungan .header-actions,
+  body.thesis .header-actions,
+  body.pengenalan .header-actions {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+
+    width: 260px;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+
+    background: rgba(43, 43, 43, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    transform: translateX(100%);
+    pointer-events: none;
+
+    z-index: 1300 !important;
+    transition: transform 0.35s ease;
+  }
+
+  /* 4. Active state */
+  body.kandungan .header-menu.active .header-actions,
+  body.thesis .header-menu.active .header-actions,
+  body.pengenalan .header-menu.active .header-actions {
+    transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  /* 5. Overlay always full screen */
+  body.kandungan .menu-overlay,
+  body.thesis .menu-overlay,
+  body.pengenalan .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1200;
+    transition: opacity 0.3s ease;
+  }
+
+  body.kandungan .header-menu.active + .menu-overlay,
+  body.thesis .header-menu.active + .menu-overlay,
+  body.pengenalan .header-menu.active + .menu-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* ================================
+   HOME – MOBILE LAYOUT
+================================ */
+@media (max-width: 768px) {
+
+  .home-content {
+    flex-direction: column;     /* stack vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 20px 40px;   /* space for header */
+    gap: 32px;
+  }
+
+  .home-text h1 {
+    font-size: 28px;  
+    text-align: center;          /* optional: better mobile scale */
+    line-height: 1.3;
+  }
+
+  .home-actions {
+    width: 100%;
+    max-width: 280px;
+    display: flex;
+    flex-direction: column;     /* buttons stacked */
+    gap: 16px;
+  }
+
+  .home-btn {
+    width: 100%;
+    padding: 14px 0;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+/* ================================
+   STRUKTUR JURNAL – MOBILE FIX
+================================ */
+@media (max-width: 768px) {
+
+  /* Give card more breathing space */
+  .struktur-card {
+    padding: 56px 20px 32px;
+  }
+
+  /* Convert floating label into inline badge */
+  .struktur-card h3 {
+    position: relative;        /* stop absolute overlap */
+    top: 0;
+    left: 0;
+    transform: none;
+
+    margin-bottom: 20px;
+
+    font-size: 20px;
+    padding: 10px 18px;
+    border-radius: 16px;
+  }
+
+  /* Reduce background dominance on small screens */
+  .struktur-card h3::before {
+    background-position: center;
+  }
+
+  /* Improve text readability */
+  .struktur-card p,
+  .struktur-card li {
+    font-size: 15.5px;
+    line-height: 1.6;
+  }
+}
+
+
+
+
+

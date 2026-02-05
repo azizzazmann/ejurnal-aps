@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Kandungan</title>
+  <link rel="stylesheet" href="css/style.css">
+</head><meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<body class="kandungan">
+
+  <!-- ===== HERO OVERLAY & HERO TITLE ===== -->
+  <div class="header-overlay"></div>
+  <h1 class="hero-title">Kandungan</h1>
+
+<!-- ===== SEARCH BAR ===== -->
+<div class="kandungan-search">
+  <div class="search-glass">
+    <input
+      type="text"
+      id="thesisSearch"
+      placeholder="Cari tajuk esei atau tesis..."
+      autocomplete="off"
+    >
+  </div>
+
+  <!-- Search results dropdown -->
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+  <!-- ===== STICKY HEADER ===== -->
+<header class="main-header">
+  <img src="assets/images/logo.png" class="logo-small" alt="Logo">
+
+  <div class="header-menu">
+    <img src="assets/images/options-btn.png" class="options-btn" alt="Options">
+
+    <div class="header-actions">  
+      <a href="home.html" class="header-btn">Halaman Utama</a>
+      <a href="pengenalan.html" class="header-btn">Pengenalan</a>
+    </div>
+  </div>
+
+  <div class="menu-overlay"></div>
+</header>
+
+
+  <!-- ===== WHITE READABLE CONTENT AREA ===== -->
+  <main class="content-wrapper kandungan-content">
+
+    <p class="intro-text">
+      Berikut merupakan senarai penulis yang telah bersetuju untuk berkongsi hasil penulisan mereka bersama Akademi Persilatan Sedunia.
+    </p>
+
+    <!-- ===== AUTHOR CARDS ===== -->
+    <section class="author-cards">
+
+      <div class="author-card">
+        <div class="author-pic">
+          <!-- Placeholder for author image -->
+          <img src="assets/images/author-1.png" alt="Author 1">
+        </div>
+
+        <div class="author-bio">
+          <h3>Dr. Ahmad Faiz</h3>
+          <p>
+            Dr. Ahmad Faiz merupakan seorang penyelidik persilatan tradisional Malaysia yang telah menulis beberapa tesis berkenaan seni bela diri Melayu.  
+            Beliau mempunyai pengalaman lebih 15 tahun dalam bidang akademik dan latihan praktikal.
+          </p>
+
+          <!-- Dropdown menu for thesis -->
+          <select class="thesis-dropdown">
+          <option selected disabled>Lawati esei penulis</option>
+          <option value="thesis.html?id=ahmad-seni">Impak Seni Pertahanan Diri</option>
+          <option value="thesis.html?id=ahmad-sejarah">Sejarah Persilatan Melayu</option>
+        </select>
+        </div>
+      </div>
+
+      <div class="author-card">
+        <div class="author-pic">
+          <img src="assets/images/author-2.png" alt="Author 2">
+        </div>
+
+        <div class="author-bio">
+          <h3>Prof. Siti Rahmah</h3>
+          <p>
+            Prof. Siti Rahmah fokus kepada kajian sejarah persilatan dan pendidikan seni bela diri.  
+            Beliau aktif menulis jurnal dan membimbing graduan PhD dalam bidang persilatan.
+          </p>
+
+          <select class="thesis-dropdown">
+          <option selected disabled>Lawati esei penulis</option>
+          <option value="thesis.html?id=siti-naratif">Naratif Silat Dunia Melayu</option>
+          <option value="thesis.html?id=siti-pendidikan">Pendidikan Persilatan</option>
+        </select>
+        </div>
+      </div>
+
+      <!-- Add more author cards here -->
+    </section>
+
+  </main>
+
+  <!-- Bottom Bar -->
+  <div class="bottom-bar">
+    <div class="bottom-bg"></div>
+    <p>© Jurnal Akademi Persilatan Sedunia</p>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>
+  document.querySelectorAll('.thesis-dropdown').forEach(select => {
+    select.addEventListener('change', function () {
+      window.location.href = this.value;
+    });
+  });
+  </script>
+  
+</body>
+</html>
